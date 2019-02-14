@@ -45,13 +45,21 @@ class Game {
     moveplayer(direction){
         this.map.grid[this.player.y][this.player.x] = 0;
         if(direction === 'up'){
+            if(this.player.y > 0){
             this.player.y --;
+            };
         } else if(direction === 'left'){
+            if(this.player.x > 0){
             this.player.x --;
+            };
         } else if(direction === 'right'){
+            if(this.player.x < 9){
             this.player.x ++;
+            };
         }else if(direction === 'down'){
+            if(this.player.y <9){
             this.player.y ++;
+            };
         };
         this.map.grid[this.player.y][this.player.x] = 10;
         console.log(this.map.grid)
