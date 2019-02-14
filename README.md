@@ -99,7 +99,7 @@ Desde gameOverScreen podrás pasar a la pantalla gameScreen para volver a jugar.
 
 Especificar las url del proyecto y del deploy
 
-[Link Repositorio](http://github.com)
+[Link Repositorio](https://github.com/danieltellezllinas/project1-PaintRoom)
 
 [Link Deploy](http://github.com)
 
