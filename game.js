@@ -49,15 +49,15 @@ class Game {
             this.player.y --;
             };
         } else if(direction === 'left'){
-            if(this.player.x > 0){
+            if(this.player.x > this.map.grid.length){
             this.player.x --;
             };
         } else if(direction === 'right'){
-            if(this.player.x < 9){
+            if(this.player.x < this.map.grid.length-1){
             this.player.x ++;
             };
         }else if(direction === 'down'){
-            if(this.player.y <9){
+            if(this.player.y < this.map.grid.length-1){
             this.player.y ++;
             };
         };
