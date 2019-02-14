@@ -45,13 +45,14 @@ const main = () => {
 
         const setPlayerDirection = (event) => {
             if(event.code === 'ArrowUp'){
-                game.player.setDirection(-1);
+                game.moveplayer('up');
             } else if(event.code === 'ArrowDown') {
-                game.player.setDirection(1);
+                game.moveplayer('down');
             } else if(event.code === 'ArrowRight') {
-                game.player.setDirection(-1);
+                game.moveplayer('right');
             } else if(event.code === 'ArrowLeft') {
-                game.player.setDirection(1)};
+                game.moveplayer('left');
+            }
         };
 
         document.addEventListener('keydown', setPlayerDirection);
