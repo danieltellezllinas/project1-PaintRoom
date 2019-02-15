@@ -36,7 +36,7 @@ const main = () => {
 
         
 
-        //setTimeout(buildGameOver, 3000);
+        setTimeout(buildGameOver, 30000);
 
         const game = new Game(canvasElement);
         game.gameOverCallback(buildGameOver);

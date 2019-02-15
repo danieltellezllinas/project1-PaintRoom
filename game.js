@@ -7,13 +7,12 @@ class Game {
         this.player;
         this.isGameOver = false;
         this.map;
-
     };
 
     startLoop(){
         
         this.player = new Player(this.canvas,3);
-        this.map = new Map(this.player);
+        this.map = new Map(this.player,this.canvas);
         console.log(this.map.grid);
 
         const loop = () => {
@@ -34,7 +33,6 @@ class Game {
     };
 
     drawCanvas(){
-        this.player.draw();
         this.map.draw();
     };
 
@@ -43,17 +41,17 @@ class Game {
     };
 
     moveplayer(direction){
-        this.map.grid[this.player.y][this.player.x] = 0;
+        this.map.grid[this.player.y][this.player.x] = 1;
         if(direction === 'up'){
             if(this.player.y > 0){
             this.player.y --;
             };
         } else if(direction === 'left'){
-            if(this.player.x > this.map.grid.length){
+            if(this.player.x > 0){
             this.player.x --;
             };
         } else if(direction === 'right'){
-            if(this.player.x < this.map.grid.length-1){
+            if(this.player.x < this.map.grid[0].length-1){
             this.player.x ++;
             };
         }else if(direction === 'down'){
@@ -63,5 +61,7 @@ class Game {
         };
         this.map.grid[this.player.y][this.player.x] = 10;
         console.log(this.map.grid)
-    };   
+    };  
+
+
 };
