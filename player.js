@@ -1,14 +1,14 @@
 'use strict';
 
 class Player{
-    constructor(canvas, lives){
-        this.size = 40;
+    constructor(canvas, size, x, y, directiony, directionx){
+        this.size = size;
         this.canvas = canvas;
         this.ctx = this.canvas.getContext('2d');
-        this.x = 0;
-        this.y= 0;
-        this.directiony = 0;
-        this.directionx = 0;
+        this.x = x;
+        this.y= y;
+        this.directiony = directiony;
+        this.directionx = directionx;
     };
 
     update(){

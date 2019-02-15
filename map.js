@@ -1,7 +1,7 @@
 'use strict';
 
 class Map {
-    constructor(player,canvas){
+    constructor(player,player2,canvas){
         this.canvas = canvas;
         this.ctx = this.canvas.getContext('2d');
         this.grid = [
@@ -27,6 +27,7 @@ class Map {
          [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
         ];
         this.grid[player.y][player.x] = 10;
+        this.grid[player2.y][player2.x] = 20;
     };  
 
     draw(){
@@ -38,8 +39,16 @@ class Map {
                 } else if(elemento === 1){
                     this.ctx.fillStyle = "blue";
                     this.ctx.fillRect(indexX*25,indexY*25,25,25);
+                }else if(elemento === 20){
+                    this.ctx.fillStyle = "black";
+                    this.ctx.fillRect(indexX*25,indexY*25,25,25);
+                } else if(elemento === 2){
+                    this.ctx.fillStyle = "yellow";
+                    this.ctx.fillRect(indexX*25,indexY*25,25,25);
                 }
             }); 
         });
+
+
     }
 };

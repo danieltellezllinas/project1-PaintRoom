@@ -5,14 +5,17 @@ class Game {
         this.canvas = canvas;
         this.ctx = this.canvas.getContext('2d');
         this.player;
+        this.player2;
         this.isGameOver = false;
         this.map;
     };
 
     startLoop(){
         
-        this.player = new Player(this.canvas,3);
-        this.map = new Map(this.player,this.canvas);
+        this.player = new Player(this.canvas, 40, 0, 0, 0, 0);
+        this.player2 = new Player(this.canvas, 40, 39, 19, 0, 0);
+        this.map = new Map(this.player, this.player2, this.canvas);
+
         console.log(this.map.grid);
 
         const loop = () => {
@@ -26,6 +29,7 @@ class Game {
 
     updateCanvas(){
         this.player.update();
+        this.player2.update();
     };
 
     clearCanvas(){
@@ -40,7 +44,7 @@ class Game {
         this.onGameOver = callback;
     };
 
-    moveplayer(direction){
+    moveplayer2(direction){
         this.map.grid[this.player.y][this.player.x] = 1;
         if(direction === 'up'){
             if(this.player.y > 0){
@@ -63,5 +67,27 @@ class Game {
         console.log(this.map.grid)
     };  
 
+    moveplayer(direction){
+        this.map.grid[this.player2.y][this.player2.x] = 2;
+        if(direction === 'up'){
+            if(this.player2.y > 0){
+            this.player2.y --;
+            };
+        } else if(direction === 'left'){
+            if(this.player2.x > 0){
+            this.player2.x --;
+            };
+        } else if(direction === 'right'){
+            if(this.player2.x < this.map.grid[0].length-1){
+            this.player2.x ++;
+            };
+        }else if(direction === 'down'){
+            if(this.player2.y < this.map.grid.length-1){
+            this.player2.y ++;
+            };
+        };
+        this.map.grid[this.player2.y][this.player2.x] = 20;
+        console.log(this.map.grid)
+    };
 
 };

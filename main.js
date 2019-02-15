@@ -56,7 +56,20 @@ const main = () => {
             }
         };
 
+        const setPlayer2Direction = (event) => {
+            if(event.code === 'KeyW'){
+                game.moveplayer2('up');
+            } else if(event.code === 'KeyS') {
+                game.moveplayer2('down');
+            } else if(event.code === 'KeyD') {
+                game.moveplayer2('right');
+            } else if(event.code === 'KeyA') {
+                game.moveplayer2('left');
+            }
+        };
+
         document.addEventListener('keydown', setPlayerDirection);
+        document.addEventListener('keydown', setPlayer2Direction);
         
     };
 
