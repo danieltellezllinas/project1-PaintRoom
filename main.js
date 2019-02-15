@@ -1,6 +1,9 @@
 'use strict';
 
 const main = () => {
+    let players;
+    let player1name;
+    let player2name;
 
     const buildDom = (html) => {
         const main = document.querySelector('main');
@@ -11,15 +14,38 @@ const main = () => {
         const buildSplashScreen = buildDom(`
         <section class="splash-screen">
             <h1>¡Paint Room!</h1>
-            <button>¡Start the game!</button>
+            <button>¡Go!</button>
         </section>
         `);
 
         const startButtom = document.querySelector('button');
+        startButtom.addEventListener('click', buildSettingsScreen);
+    };
+
+    const buildSettingsScreen = () => {
+        const buildSettingsScreen = buildDom(`
+        <section class="splash-screen">
+            <h1>¡Settings!</h1>
+            <form action="reg.txt"> 
+                <input type="text" id="player1name" placeholder="Player one">
+                <input type="text" id="player2name" placeholder="Player two">
+                <button id=button>Play</button>
+            </form>
+        </section>
+        `);
+
+        players = document.querySelectorAll('input');
+        player1name = players[0].value;
+        player2name = players[1].value;
+
+        const startButtom = document.querySelector('#button');
         startButtom.addEventListener('click', buildGameScreen);
+        
     };
 
     const buildGameScreen = () => {
+        console.log(players[0].value);
+        console.log(players[1].value);
         const buildGameScreen = buildDom(`
         <section class="body-gamescreen">
         <section class="game-screen">
