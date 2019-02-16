@@ -4,9 +4,14 @@
 }
 
 .game-screen {
-    margin: 9% auto;
+    margin: auto;
+    margin-top: 9%;
     width: 1000px;
     height: 500px;
     border: 1px solid black;
     background-image: url("Imagenes/background-game.png");
+}
+
+#countdown {
+    position: absolute;
 }

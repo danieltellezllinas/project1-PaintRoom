@@ -10,6 +10,26 @@ class Game {
         this.map;
     };
 
+    contador(){
+        var seconds = 29;
+        function secondPassed() {
+
+        var minutes = Math.round((seconds - 30)/60);
+        var remainingSeconds = seconds % 60;
+        if (remainingSeconds < 10) { 
+            remainingSeconds = "0" + remainingSeconds; 
+        } 
+        document.getElementById('countdown').innerHTML = minutes + ":" +     remainingSeconds; 
+        if (seconds == 0) { 
+            clearInterval(countdownTimer); 
+        } else { 
+            seconds--; 
+        } 
+        } 
+
+        var countdownTimer = setInterval(secondPassed, 1000);
+    };
+
     startLoop(){
         
         this.player = new Player(this.canvas, 40, 0, 0, 0, 0);
@@ -89,5 +109,7 @@ class Game {
         this.map.grid[this.player2.y][this.player2.x] = 20;
         console.log(this.map.grid)
     };
+
+    
 
 };

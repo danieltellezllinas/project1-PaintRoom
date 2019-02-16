@@ -48,6 +48,7 @@ const main = () => {
         console.log(players[1].value);
         const buildGameScreen = buildDom(`
         <section class="body-gamescreen">
+        <label id="countdown"></label>
         <section class="game-screen">
             <canvas></canvas>
         </section>
@@ -67,6 +68,8 @@ const main = () => {
 
         const game = new Game(canvasElement);
         game.gameOverCallback(buildGameOver);
+
+        game.contador();
 
         game.startLoop();
 
@@ -119,3 +122,4 @@ const main = () => {
 };
 
 window.addEventListener('load',main);
+
