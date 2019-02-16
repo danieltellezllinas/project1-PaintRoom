@@ -56,8 +56,6 @@ const main = () => {
         </section>
         `);
 
-
-
         const width = document.querySelector('.game-screen').offsetWidth;
         const height = document.querySelector('.game-screen').offsetHeight;
 

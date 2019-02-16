@@ -24,11 +24,10 @@ class Game {
              }
          })
  });
-
-        document.getElementById('puntosplayer1').innerHTML = counter1;
-        document.getElementById('puntosplayer2').innerHTML = counter2;
-        console.log(`Puntos jugador uno = ${counter1*valorpuntos}`);
-        console.log(`Puntos jugador dos = ${counter2*valorpuntos}`);
+        let puntostotal1= counter1 * 10;
+        let puntostotal2= counter2 * 10;
+        document.getElementById('puntosplayer1').innerHTML = puntostotal1;
+        document.getElementById('puntosplayer2').innerHTML = puntostotal2;
     };
 
     contador(){
