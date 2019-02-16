@@ -10,8 +10,26 @@ class Game {
         this.map;
     };
 
+    puntuacion(){
+        let counter1 = 0;
+        let counter2 = 0;
+
+        this.map.grid.forEach(function(element) {
+        element.forEach(function(num){
+            if(num === 1 ){
+            counter1++;
+            }
+            else if(num === 2){
+            counter2++;
+            }
+        })
+        });
+        console.log(counter1);
+        console.log(counter2);
+    };
+
     contador(){
-        var seconds = 29;
+        var seconds = 60;
         function secondPassed() {
 
         var minutes = Math.round((seconds - 30)/60);
@@ -69,18 +87,22 @@ class Game {
         if(direction === 'up'){
             if(this.player.y > 0){
             this.player.y --;
+            this.puntuacion();
             };
         } else if(direction === 'left'){
             if(this.player.x > 0){
             this.player.x --;
+            this.puntuacion();
             };
         } else if(direction === 'right'){
             if(this.player.x < this.map.grid[0].length-1){
             this.player.x ++;
+            this.puntuacion();
             };
         }else if(direction === 'down'){
             if(this.player.y < this.map.grid.length-1){
             this.player.y ++;
+            this.puntuacion();
             };
         };
         this.map.grid[this.player.y][this.player.x] = 10;
@@ -92,24 +114,26 @@ class Game {
         if(direction === 'up'){
             if(this.player2.y > 0){
             this.player2.y --;
+            this.puntuacion();
             };
         } else if(direction === 'left'){
             if(this.player2.x > 0){
             this.player2.x --;
+            this.puntuacion();
             };
         } else if(direction === 'right'){
             if(this.player2.x < this.map.grid[0].length-1){
             this.player2.x ++;
+            this.puntuacion();
             };
         }else if(direction === 'down'){
             if(this.player2.y < this.map.grid.length-1){
             this.player2.y ++;
+            this.puntuacion();
             };
         };
         this.map.grid[this.player2.y][this.player2.x] = 20;
         console.log(this.map.grid)
     };
-
-    
 
 };
