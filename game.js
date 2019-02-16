@@ -14,17 +14,19 @@ class Game {
         let counter1 = 0;
         let counter2 = 0;
         let valorpuntos = 10;
-        this.map.grid.forEach(function(element) {
-        element.forEach(function(num){
-            if(num === 1 ){
-            counter1++;
-            }
-            else if(num === 2){
-            counter2++;
-            }
-        })
-        });
+         this.map.grid.forEach(function(element) {
+         element.forEach(function(num){
+             if(num === 1 ){
+             counter1++;
+             }
+             else if(num === 2){
+             counter2++;
+             }
+         })
+ });
 
+        document.getElementById('puntosplayer1').innerHTML = counter1;
+        document.getElementById('puntosplayer2').innerHTML = counter2;
         console.log(`Puntos jugador uno = ${counter1*valorpuntos}`);
         console.log(`Puntos jugador dos = ${counter2*valorpuntos}`);
     };

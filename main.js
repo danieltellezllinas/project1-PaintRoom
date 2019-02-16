@@ -48,11 +48,15 @@ const main = () => {
         console.log(players[1].value);
         const buildGameScreen = buildDom(`
         <section class="body-gamescreen">
-        <label id="countdown"></label>
+        <div id="countdown"></div>
+        <div id="puntosplayer1" class="pointsplayers"></div>
+        <div id="puntosplayer2" class="pointsplayers2"></div>
         <section class="game-screen">
-            <canvas></canvas>
+        <canvas></canvas>
         </section>
         `);
+
+
 
         const width = document.querySelector('.game-screen').offsetWidth;
         const height = document.querySelector('.game-screen').offsetHeight;
@@ -72,6 +76,8 @@ const main = () => {
         game.contador();
 
         game.startLoop();
+
+        game.puntuacion();
 
         const setPlayerDirection = (event) => {
             if(event.code === 'ArrowUp'){
