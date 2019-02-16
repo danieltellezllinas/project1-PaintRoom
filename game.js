@@ -13,7 +13,7 @@ class Game {
     puntuacion(){
         let counter1 = 0;
         let counter2 = 0;
-
+        let valorpuntos = 10;
         this.map.grid.forEach(function(element) {
         element.forEach(function(num){
             if(num === 1 ){
@@ -24,8 +24,9 @@ class Game {
             }
         })
         });
-        console.log(counter1);
-        console.log(counter2);
+
+        console.log(`Puntos jugador uno = ${counter1*valorpuntos}`);
+        console.log(`Puntos jugador dos = ${counter2*valorpuntos}`);
     };
 
     contador(){
