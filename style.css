@@ -14,14 +14,9 @@
 
 #countdown {
     position: absolute;
+    padding-left: 5%;
 }
 
-.pointsplayers {
-    position: absolute;
-    padding-top: 5%;
-}
-
-.pointsplayers2 {
-    position: absolute;
-    padding-top: 3%;
+.contadorplayer1 {
+    border: 1px solid black;
 }

@@ -2,8 +2,6 @@
 
 const main = () => {
     let players;
-    let player1name;
-    let player2name;
 
     const buildDom = (html) => {
         const main = document.querySelector('main');
@@ -22,39 +20,51 @@ const main = () => {
         startButtom.addEventListener('click', buildSettingsScreen);
     };
 
+    let player1name, player2name;
+
     const buildSettingsScreen = () => {
         const buildSettingsScreen = buildDom(`
         <section class="splash-screen">
             <h1>¡Settings!</h1>
-            <form action="reg.txt"> 
+            
                 <input type="text" id="player1name" placeholder="Player one">
                 <input type="text" id="player2name" placeholder="Player two">
                 <button id=button>Play</button>
-            </form>
+            
         </section>
         `);
 
         players = document.querySelectorAll('input');
-        player1name = players[0].value;
-        player2name = players[1].value;
-
         const startButtom = document.querySelector('#button');
         startButtom.addEventListener('click', buildGameScreen);
-        
+       
     };
 
     const buildGameScreen = () => {
-        console.log(players[0].value);
-        console.log(players[1].value);
+        console.log(player1name)
+        console.log(player2name)
+
+        player1name = players[0].value;
+        player2name = players[1].value;
+
         const buildGameScreen = buildDom(`
         <section class="body-gamescreen">
         <div id="countdown"></div>
-        <div id="puntosplayer1" class="pointsplayers"></div>
-        <div id="puntosplayer2" class="pointsplayers2"></div>
+        <div class="contadorplayer1">
+            <div id="nameplayer1"></div>
+            <div id="puntosplayer1" class="pointsplayers"></div>
+        </div>
+        <div class="contadorplayer2">
+            <div id="nameplayer2"></div>
+            <div id="puntosplayer2" class="pointsplayers2"></div>
+        </div>
         <section class="game-screen">
         <canvas></canvas>
         </section>
         `);
+
+        document.getElementById('nameplayer1').innerText = player1name;
+        document.getElementById('nameplayer2').innerText = player2name;
 
         const width = document.querySelector('.game-screen').offsetWidth;
         const height = document.querySelector('.game-screen').offsetHeight;
@@ -76,6 +86,8 @@ const main = () => {
         game.startLoop();
 
         game.puntuacion();
+
+        var keys = {};
 
         const setPlayerDirection = (event) => {
             if(event.code === 'ArrowUp'){

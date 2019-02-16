@@ -26,8 +26,8 @@ class Game {
  });
         let puntostotal1= counter1 * 10;
         let puntostotal2= counter2 * 10;
-        document.getElementById('puntosplayer1').innerHTML = puntostotal1;
-        document.getElementById('puntosplayer2').innerHTML = puntostotal2;
+        document.getElementById('puntosplayer1').innerText = puntostotal1;
+        document.getElementById('puntosplayer2').innerText = puntostotal2;
     };
 
     contador(){
@@ -39,7 +39,7 @@ class Game {
         if (remainingSeconds < 10) { 
             remainingSeconds = "0" + remainingSeconds; 
         } 
-        document.getElementById('countdown').innerHTML = minutes + ":" +     remainingSeconds; 
+        document.getElementById('countdown').innerText = minutes + ":" +     remainingSeconds; 
         if (seconds == 0) { 
             clearInterval(countdownTimer); 
         } else { 
@@ -62,6 +62,7 @@ class Game {
             this.updateCanvas();
             this.clearCanvas();
             this.drawCanvas();
+            
         window.requestAnimationFrame(loop);
     }
     window.requestAnimationFrame(loop);
