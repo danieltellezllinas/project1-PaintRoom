@@ -42,11 +42,11 @@ const main = () => {
         const buildSettingsScreen = buildDom(`
         <section>
             <h1>¡Settings!</h1>
-            
-                <input type="text" id="player1name" placeholder="Player one">
-                <input type="text" id="player2name" placeholder="Player two">
-                <button id=button>Play</button>
-            
+            <form>
+            <input type="text" id="player1name" placeholder="Player one" id="choose" name="i_like" required>
+            <input type="text" id="player2name" placeholder="Player two" id="choose" name="i_like" required>
+            <button id=button>Play</button>
+            </form>
         </section>
         `);
 
@@ -64,18 +64,24 @@ const main = () => {
         player2name = players[1].value;
 
         const buildGameScreen = buildDom(`
-        <section class="body-gamescreen">
-        <div id="countdown"></div>
-        <div class="contadorplayer1">
-            <div id="nameplayer1"></div>
-            <div id="puntosplayer1" class="pointsplayers"></div>
-        </div>
-        <div class="contadorplayer2">
-            <div id="nameplayer2"></div>
-            <div id="puntosplayer2" class="pointsplayers2"></div>
-        </div>
-        <section class="game-screen">
-        <canvas></canvas>
+        <section class="splash-screen">
+            <div class="flex-container">
+                <div class="div1-flexcontainer">
+                    <p>Player 1:</p>
+                    <div id="nameplayer1"></div>
+                    <div id="puntosplayer1" class="pointsplayers"></div>
+                </div>
+                <div class="div2-flexcontainer">
+                <div id="countdown"></div>
+                </div>
+                <div class="div3-flexcontainer">
+                    <p>Player 2:</p>
+                    <div id="nameplayer2"></div>
+                    <div id="puntosplayer2" class="pointsplayers2"></div>
+                </div>
+            <section class="game-screen">
+            <canvas></canvas>
+            </section>
         </section>
         `);
 

@@ -13,7 +13,6 @@ class Game {
     puntuacion(){
         let counter1 = 0;
         let counter2 = 0;
-        let valorpuntos = 10;
          this.map.grid.forEach(function(element) {
          element.forEach(function(num){
              if(num === 1 ){

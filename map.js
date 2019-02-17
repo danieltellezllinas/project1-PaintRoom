@@ -34,16 +34,16 @@ class Map {
         this.grid.forEach((array, indexY) => {
             array.forEach((elemento, indexX) => {
                 if(elemento === 10){
-                    this.ctx.fillStyle = "red";
+                    this.ctx.fillStyle = "#C39BD3";
                     this.ctx.fillRect(indexX*25,indexY*25,25,25);
                 } else if(elemento === 1){
-                    this.ctx.fillStyle = "blue";
+                    this.ctx.fillStyle = "#D7BDE2";
                     this.ctx.fillRect(indexX*25,indexY*25,25,25);
                 }else if(elemento === 20){
-                    this.ctx.fillStyle = "black";
+                    this.ctx.fillStyle = "#85C1E9";
                     this.ctx.fillRect(indexX*25,indexY*25,25,25);
                 } else if(elemento === 2){
-                    this.ctx.fillStyle = "yellow";
+                    this.ctx.fillStyle = "#AED6F1";
                     this.ctx.fillRect(indexX*25,indexY*25,25,25);
                 }
             }); 
