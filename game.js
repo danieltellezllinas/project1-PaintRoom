@@ -84,7 +84,7 @@ class Game {
     gameOverCallback(callback){
         this.onGameOver = callback;
     };
-
+    
     moveplayer2(direction){
         this.map.grid[this.player.y][this.player.x] = 1;
         if(direction === 'up'){

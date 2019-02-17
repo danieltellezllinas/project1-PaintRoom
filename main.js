@@ -11,8 +11,11 @@ const main = () => {
     const buildSplashScreen = () => {
         const buildSplashScreen = buildDom(`
         <section class="splash-screen">
+            <div class="splash-screen-center">
             <h1>¡Paint Room!</h1>
-            <button>¡Go!</button>
+            <p>¡Bienvenid@ al juego! ¿Estás segur@ que podrás conseguir más puntos que tu oponente? ¡Presiona el botón y que empieze la diversión!</p>
+            <button class="boton">¡Go!</button>
+            </div>
         </section>
         `);
 
@@ -24,7 +27,7 @@ const main = () => {
 
     const buildSettingsScreen = () => {
         const buildSettingsScreen = buildDom(`
-        <section class="splash-screen">
+        <section>
             <h1>¡Settings!</h1>
             
                 <input type="text" id="player1name" placeholder="Player one">
