@@ -12,9 +12,20 @@ const main = () => {
         const buildSplashScreen = buildDom(`
         <section class="splash-screen">
             <div class="splash-screen-center">
-            <h1>¡Paint Room!</h1>
-            <p>¡Bienvenid@ al juego! ¿Estás segur@ que podrás conseguir más puntos que tu oponente? ¡Presiona el botón y que empieze la diversión!</p>
-            <button class="boton">¡Go!</button>
+                <h1>¡Paint Room!</h1>
+                <p class="titulo-splash">¡Bienvenid@ al juego! ¿Estás segur@ que podrás conseguir más puntos que tu oponente?</p>
+            <div class="flexbox-container">
+                <div>
+                    <h3>¡Entra al juego!</h3>
+                    <p>¡Presiona el botón y que comience la diversión!</p>
+                    <button class="boton">¡Start!</button>
+                </div>
+                <div>
+                    <h3>Instrucciones</h3>
+                    <p>¿No sabes como jugar? ¡Aquí tendrás toda la información del juego!</p>
+                    <button class="boton">¡Here!</button>
+                </div>
+            </div>
             </div>
         </section>
         `);
