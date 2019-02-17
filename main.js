@@ -67,17 +67,21 @@ const main = () => {
         <section class="splash-screen">
             <div class="flex-container">
                 <div class="div1-flexcontainer">
-                    <p>Player 1:</p>
-                    <div id="nameplayer1"></div>
-                    <div id="puntosplayer1" class="pointsplayers"></div>
+                    <div class="down">
+                        <p class="padding-bottom blackletter">Player 1:</p>
+                        <div class="padding-bottom" id="nameplayer1"></div>
+                        <div class="padding-bottom" id="puntosplayer1" class="pointsplayers"></div>
+                    </div>
                 </div>
                 <div class="div2-flexcontainer">
                 <div id="countdown"></div>
                 </div>
                 <div class="div3-flexcontainer">
-                    <p>Player 2:</p>
-                    <div id="nameplayer2"></div>
-                    <div id="puntosplayer2" class="pointsplayers2"></div>
+                <div class="down">
+                    <p class="padding-bottom blackletter">Player 2:</p>
+                    <div class="padding-bottom" id="nameplayer2"></div>
+                    <div class="padding-bottom" id="puntosplayer2" class="pointsplayers2"></div>
+                </div>
                 </div>
             <section class="game-screen">
             <canvas></canvas>
@@ -102,6 +106,8 @@ const main = () => {
 
         const game = new Game(canvasElement);
         game.gameOverCallback(buildGameOver);
+
+        document.getElementById("countdown").innerText ="1:00";
 
         game.contador();
 
