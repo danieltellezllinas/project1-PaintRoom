@@ -56,22 +56,6 @@ const main = () => {
        
     };
 
-    const buildGameOver = () => {
-        const buildGameOverScreen = buildDom(`
-        <section class="game-over">
-            <h1> Game over Screen</h1>
-            <button id="button1">Restart</button>
-            <button id="button2">Home</button>
-        </section>
-        `);
-
-        const restartButton1 = document.querySelector('#button1');
-        restartButton1.addEventListener('click', buildGameScreen);
-
-        const restartButton2 = document.querySelector('#button2');
-        restartButton2.addEventListener('click', buildSplashScreen);
-    }
-
     const buildGameScreen = () => {
 
         player1name = players[0].value;
@@ -115,12 +99,13 @@ const main = () => {
         canvasElement.setAttribute('width', width);
         canvasElement.setAttribute('height', height);
         
-        console.log(canvasElement)
         
-        // setTimeout(buildGameOver, 62000);
-        
-        const game = new Game(canvasElement);
-        game.onOver(buildGameOver);
+        let game = new Game(canvasElement);
+        game.onOver(function(puntos1,puntos2){
+            document.removeEventListener('keyup', setPlayerDirection);
+            document.removeEventListener('keyup', setPlayer2Direction);
+            buildGameOver(puntos1,puntos2)
+        });
         document.getElementById("countdown").innerText ="1:00";
         
         game.contador();
@@ -158,7 +143,33 @@ const main = () => {
         
     };
 
+    const buildGameOver = (puntos1,puntos2) => {
+        
+        const buildGameOverScreen = buildDom(`
+        <section class="game-over">
+            <h1> Game over Screen</h1>
+            <button id="button1">Restart</button>
+            <button id="button2">Home</button>
+            <div id="nameplayer1-1"></div>
+            <div id="puntosplayer1"></div>
+            <div id='nameplayer2-2'></div>
+            <div id="puntosplayer2"></div>
+
+        </section>
+        `);
+
+        const restartButton1 = document.querySelector('#button1');
+        restartButton1.addEventListener('click', buildGameScreen);
+
+        const restartButton2 = document.querySelector('#button2');
+        restartButton2.addEventListener('click', buildSplashScreen);
     
+        document.getElementById('puntosplayer1').innerText = puntos1;
+        document.getElementById('puntosplayer2').innerText = puntos2;
+
+        document.getElementById('nameplayer1-1').innerText = player1name;
+        document.getElementById('nameplayer2-2').innerText = player2name;
+    }
 
     buildSplashScreen();
 };

@@ -256,7 +256,6 @@ transform: scale(1.3);
 
   .div1-flexcontainer {
     height: 80px;
-    border-radius: 5px;
     padding-left: 5%;
     padding-right: 5%;
     text-align: center;
@@ -268,12 +267,11 @@ transform: scale(1.3);
     width: 160px;
     background-color: antiquewhite;
     padding-left: 55px;
-    border: 1px #C5BBFF dashed;
+    border: 1px #C5BBFF solid;
 }
 
 .div3-flexcontainer{
   height: 80px;
-  border-radius: 5px;
   padding-left: 5%;
   padding-right: 5%;
   text-align: center;

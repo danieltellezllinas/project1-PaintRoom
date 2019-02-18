@@ -29,13 +29,9 @@ class Game {
     this.puntostotal1 = this.counter1 * 10;
     this.puntostotal2 = this.counter2 * 10;
 
-    const puntos1 = document.getElementById("puntosplayer1")
-    const puntos2 = document.getElementById("puntosplayer2")
-
-    if(puntos1 && puntos2) {
-      puntos1.innerText = this.puntostotal1;
-      puntos2.innerText = this.puntostotal2;
-    }
+    document.getElementById('puntosplayer1').innerText = this.puntostotal1;
+    document.getElementById('puntosplayer2').innerText = this.puntostotal1;
+   
   }
 
   contador() {
@@ -63,9 +59,9 @@ class Game {
     this.player2 = new Player(this.canvas, 40, 39, 19, 0, 0);
     this.map = new Map(this.player, this.player2, this.canvas);
 
-    console.log(this.map.grid);
-
-    setTimeout(this.gameOverCallback, 62000);
+    setTimeout(() => {
+      this.isGameOver = true;
+    }, 62000);
 
     const loop = () => {
       this.updateCanvas();
@@ -75,9 +71,13 @@ class Game {
 
       if(!this.isGameOver) {
         window.requestAnimationFrame(loop);
+      }else{
+        this.gameOverCallback(this.puntostotal1,this.puntostotal2)   
       }
     };
+    if(!this.isGameOver) {
     window.requestAnimationFrame(loop);
+    }
   }
 
   updateCanvas() {
