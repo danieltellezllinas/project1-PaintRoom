@@ -46,8 +46,8 @@ const main = () => {
                 <h1 class="grow">¡Settings!</h1>
                 <p class="titulo-settings">¡Elige tu nombre y que comience la partida!</p>
                 <form>
-                <input class="player12name" type="text" id="player1name" placeholder="Player one"><div class="separar-settings"></div>
-                <input class="player12name" type="text" id="player2name" placeholder="Player two"><br>
+                <input class="player12name swing" type="text" id="player1name" placeholder="Player one"><div class="separar-settings"></div>
+                <input class="player12name swing" type="text" id="player2name" placeholder="Player two"><br>
                 <div class="div-buttom-settings"><button class="boton-verde" id=button>Play</button></div>
                 </form>
                 <div>
