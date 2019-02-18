@@ -56,9 +56,23 @@ const main = () => {
        
     };
 
+    const buildGameOver = () => {
+        const buildGameOverScreen = buildDom(`
+        <section class="game-over">
+            <h1> Game over Screen</h1>
+            <button id="button1">Restart</button>
+            <button id="button2">Home</button>
+        </section>
+        `);
+
+        const restartButton1 = document.querySelector('#button1');
+        restartButton1.addEventListener('click', buildGameScreen);
+
+        const restartButton2 = document.querySelector('#button2');
+        restartButton2.addEventListener('click', buildSplashScreen);
+    }
+
     const buildGameScreen = () => {
-        console.log(player1name)
-        console.log(player2name)
 
         player1name = players[0].value;
         player2name = players[1].value;
@@ -92,28 +106,26 @@ const main = () => {
         document.getElementById('nameplayer1').innerText = player1name;
         document.getElementById('nameplayer2').innerText = player2name;
 
+        
         const width = document.querySelector('.game-screen').offsetWidth;
         const height = document.querySelector('.game-screen').offsetHeight;
-
+        
         const canvasElement = document.querySelector('canvas');
-
+        
         canvasElement.setAttribute('width', width);
         canvasElement.setAttribute('height', height);
-
         
-
-        setTimeout(buildGameOver, 62000);
-
+        console.log(canvasElement)
+        
+        // setTimeout(buildGameOver, 62000);
+        
         const game = new Game(canvasElement);
-        game.gameOverCallback(buildGameOver);
-
+        game.onOver(buildGameOver);
         document.getElementById("countdown").innerText ="1:00";
-
+        
         game.contador();
-
+        
         game.startLoop();
-
-        game.puntuacion();
 
         var keys = {};
 
@@ -141,26 +153,12 @@ const main = () => {
             }
         };
 
-        document.addEventListener('keydown', setPlayerDirection);
-        document.addEventListener('keydown', setPlayer2Direction);
+        document.addEventListener('keyup', setPlayerDirection);
+        document.addEventListener('keyup', setPlayer2Direction);
         
     };
 
-    const buildGameOver = () => {
-        const buildGameOverScreen = buildDom(`
-        <section class="game-over">
-            <h1> Game over Screen</h1>
-            <button id="button1">Restart</button>
-            <button id="button2">Home</button>
-        </section>
-        `);
-
-        const restartButton1 = document.querySelector('#button1');
-        restartButton1.addEventListener('click', buildGameScreen);
-
-        const restartButton2 = document.querySelector('#button2');
-        restartButton2.addEventListener('click', buildSplashScreen);
-    }
+    
 
     buildSplashScreen();
 };
