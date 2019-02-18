@@ -19,12 +19,12 @@ const main = () => {
                 <div>
                     <h3 class="swing">¡Entra al juego!</h3>
                     <p>¡Presiona el botón y que comience la diversión!</p>
-                    <button class="boton">¡Start!</button>
+                    <button id="button1" class="boton">¡Start!</button>
                 </div>
                 <div>
                     <h3 class="swing">Instrucciones</h3>
                     <p>¿No sabes como jugar? ¡Aquí tendrás toda la información!</p>
-                    <button class="boton">¡Here!</button>
+                    <button id="button2" class="boton">¡Here!</button>
                 </div>
             </div>
             </div>
@@ -32,8 +32,23 @@ const main = () => {
         </section>
         `);
 
-        const startButtom = document.querySelector('button');
-        startButtom.addEventListener('click', buildSettingsScreen);
+        const startButton1 = document.getElementById('button1');
+        startButton1.addEventListener('click', buildSettingsScreen);
+
+        const startButton2 = document.getElementById('button2');
+        startButton2.addEventListener('click', buildInstructionsScreen);
+    };
+
+    const buildInstructionsScreen = () => {
+        const buildInstructionsScreen = buildDom(`
+        <section>
+            <p>Instrucciones</p>
+            <button id="button2" class="boton">¡Start!</button>
+        </section>
+        `);
+
+        const startButton3 = document.getElementById('button2');
+        startButton3.addEventListener('click', buildSettingsScreen);
     };
 
     let player1name, player2name;
