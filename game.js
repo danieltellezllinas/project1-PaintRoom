@@ -30,7 +30,7 @@ class Game {
     this.puntostotal2 = this.counter2 * 10;
 
     document.getElementById('puntosplayer1').innerText = this.puntostotal1;
-    document.getElementById('puntosplayer2').innerText = this.puntostotal1;
+    document.getElementById('puntosplayer2').innerText = this.puntostotal2;
    
   }
 

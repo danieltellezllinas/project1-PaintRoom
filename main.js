@@ -40,13 +40,18 @@ const main = () => {
 
     const buildSettingsScreen = () => {
         const buildSettingsScreen = buildDom(`
-        <section>
-            <h1>¡Settings!</h1>
-            <form>
-            <input type="text" id="player1name" placeholder="Player one" id="choose" name="i_like" required>
-            <input type="text" id="player2name" placeholder="Player two" id="choose" name="i_like" required>
-            <button id=button>Play</button>
-            </form>
+        <section class="splash-screen">
+            <div class="settings-screen-center">
+                <div>
+                <h1 class="grow">¡Settings!</h1>
+                <p class="titulo-settings">¡Elige tu nombre y que comience la partida!</p>
+                <form>
+                <input class="player12name" type="text" id="player1name" placeholder="Player one"><div class="separar-settings"></div>
+                <input class="player12name" type="text" id="player2name" placeholder="Player two"><br>
+                <div class="div-buttom-settings"><button class="boton-verde" id=button>Play</button></div>
+                </form>
+                <div>
+            </div>
         </section>
         `);
 
