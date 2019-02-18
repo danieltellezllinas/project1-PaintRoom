@@ -41,10 +41,29 @@ const main = () => {
 
     const buildInstructionsScreen = () => {
         const buildInstructionsScreen = buildDom(`
-        <section>
-            <p>Instrucciones</p>
-            <button id="button2" class="boton">¡Start!</button>
+        <section class="splash-screen">
+            <div class="instructions-screen-center">
+            <div class="borde">
+                <h1 class="grow">Instrucciones</h1>
+                <p class="titulo-instructions">· Deberás pasar por encima de las casillas de tu oponente para robarle los puntos.</p>
+                <p class="titulo-instructions">· El ganador de la partida será el que consiga más puntos una vez finalizado el tiempo.</p>
+                <div class="flexbox-container">
+                <div class="color-p">
+                    <h3 class="swing">Player 1</h3>
+                    <img src="Imagenes/mov-img1.png"/>
+                    <p class="p-container">El jugador uno deberá jugar con las teclas mostradas en la imagen.</p>
+                </div>
+                <div class="color-p">
+                    <h3 class="swing">Player 2</h3>
+                    <img src="Imagenes/mov-img2.png"/>
+                    <p class="p-container">El jugador dos deberá jugar con las teclas mostradas en la imagen.</p>
+                </div>
+            </div>
+            </div>
+            <div><button id="button2" class="boton-naranja">¡Start!</button></div>
+            </div>
         </section>
+        
         `);
 
         const startButton3 = document.getElementById('button2');
