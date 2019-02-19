@@ -61,7 +61,7 @@ class Game {
 
     setTimeout(() => {
       this.isGameOver = true;
-    }, 1000);
+    }, 62000);
 
     const loop = () => {
       this.updateCanvas();
