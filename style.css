@@ -243,7 +243,7 @@ transform: scale(1.3);
     width: 1000px;
     height: 500px;
     margin-left: 11.5%;
-    border: 1px #C5BBFF solid;
+    border: 1px #FBFFBD solid;
     background-image: url("Imagenes/background-game.png");
     position: absolute;
 }
@@ -265,9 +265,8 @@ transform: scale(1.3);
 .div2-flexcontainer{
     height: 90px;
     width: 160px;
-    background-color: antiquewhite;
+    background-color: #FBFFBD;
     padding-left: 55px;
-    border: 1px #FFCC7E solid;
 }
 
 .div3-flexcontainer{
@@ -279,7 +278,7 @@ transform: scale(1.3);
 }
 
 #countdown{
-    color:#FFCC7E;
+    color:#E9F351;
     font-family: 'Staatliches', cursive;
     font-size: 70px;
     padding-top: 10px;
