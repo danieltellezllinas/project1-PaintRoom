@@ -10,7 +10,7 @@ const main = () => {
     } 
     const buildSplashScreen = () => {
         const buildSplashScreen = buildDom(`
-        <section class="splash-screen">
+        <section class="splash-screen screens">
             <div class="splash-screen-center">
             <div class="borde">
                 <h1 class="grow">¡Paint Room!</h1>
@@ -41,7 +41,7 @@ const main = () => {
 
     const buildInstructionsScreen = () => {
         const buildInstructionsScreen = buildDom(`
-        <section class="splash-screen">
+        <section class="splash-screen screens">
             <div class="instructions-screen-center">
             <div class="borde">
                 <h1 class="grow">Instrucciones</h1>
@@ -73,7 +73,7 @@ const main = () => {
 
     const buildSettingsScreen = () => {
         const buildSettingsScreen = buildDom(`
-        <section class="splash-screen">
+        <section class="splash-screen screens">
             <div class="settings-screen-center">
                 <div>
                 <h1 class="grow">¡Settings!</h1>
@@ -126,6 +126,7 @@ const main = () => {
                     <p class="padding-bottom blackletter color-player2">Player 2:</p>
                     <div class="padding-bottom color-player2" id="nameplayer2"></div>
                     <div class="padding-bottom color-player2" id="puntosplayer2" class="pointsplayers2"></div>
+                </div>
                 </div>
                 </div>
             <section class="game-screen">
@@ -194,12 +195,12 @@ const main = () => {
         
         const buildGameOverScreen = buildDom(`
 
-        <section class="splash-screen">
+        <section class="splash-screen screens">
             <div class="gameover-screen-center">
             <div class="borde">
                 <h1 class="grow">¡End of the game!</h1>
                 <p class="titulo-gameover">¡Podrás volver al inicio o jugar de nuevo!</p>
-            <div class="flexbox-container">
+            <div class="gameover-puntos">
                 <div>
                     <h3 class="swing">Jugador 1</h3>
                     <div class="background-x player-color" id="nameplayer1-1"></div>
@@ -216,7 +217,7 @@ const main = () => {
             </div>
             <div class="padding-bottom-gameover flexbox-container-gameover">
                 <div>
-                    <button class="boton-blue" id="button2">Home</button>
+                    <button class="boton-blue home" id="button2">Home</button>
                 </div>
                 <div>
                     <button class="boton-blue" id="button1">Restart</button>
