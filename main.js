@@ -113,9 +113,9 @@ const main = () => {
             <div class="flex-container">
                 <div class="div1-flexcontainer">
                     <div class="down">
-                        <p class="padding-bottom blackletter">Player 1:</p>
-                        <div class="padding-bottom" id="nameplayer1"></div>
-                        <div class="padding-bottom" id="puntosplayer1" class="pointsplayers"></div>
+                        <p class="padding-bottom blackletter color-player1">Player 1:</p>
+                        <div class="padding-bottom color-player1" id="nameplayer1"></div>
+                        <div class="padding-bottom color-player1" id="puntosplayer1" class="pointsplayers"></div>
                     </div>
                 </div>
                 <div class="div2-flexcontainer">
@@ -123,9 +123,9 @@ const main = () => {
                 </div>
                 <div class="div3-flexcontainer">
                 <div class="down">
-                    <p class="padding-bottom blackletter">Player 2:</p>
-                    <div class="padding-bottom" id="nameplayer2"></div>
-                    <div class="padding-bottom" id="puntosplayer2" class="pointsplayers2"></div>
+                    <p class="padding-bottom blackletter color-player2">Player 2:</p>
+                    <div class="padding-bottom color-player2" id="nameplayer2"></div>
+                    <div class="padding-bottom color-player2" id="puntosplayer2" class="pointsplayers2"></div>
                 </div>
                 </div>
             <section class="game-screen">
@@ -202,15 +202,15 @@ const main = () => {
             <div class="flexbox-container">
                 <div>
                     <h3 class="swing">Jugador 1</h3>
-                    <div class="background-x" id="nameplayer1-1"></div>
+                    <div class="background-x player-color" id="nameplayer1-1"></div>
                     <div class="padding-div-gameover" ></div>
-                    <div class="background-x" id="puntosplayer1"></div>
+                    <div class="background-x player-color" id="puntosplayer1"></div>
                 </div>
                 <div>
                     <h3 class="swing">Jugador2</h3>
-                    <div class="background-x" id='nameplayer2-2'></div>
+                    <div class="background-x player-color" id='nameplayer2-2'></div>
                     <div class="padding-div-gameover" ></div>
-                    <div class="background-x" id="puntosplayer2"></div>
+                    <div class="background-x player-color" id="puntosplayer2"></div>
                 </div>
             </div>
             </div>

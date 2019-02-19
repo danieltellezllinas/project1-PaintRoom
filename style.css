@@ -267,7 +267,7 @@ transform: scale(1.3);
     width: 160px;
     background-color: antiquewhite;
     padding-left: 55px;
-    border: 1px #C5BBFF solid;
+    border: 1px #FFCC7E solid;
 }
 
 .div3-flexcontainer{
@@ -279,7 +279,7 @@ transform: scale(1.3);
 }
 
 #countdown{
-    color:black;
+    color:#FFCC7E;
     font-family: 'Staatliches', cursive;
     font-size: 70px;
     padding-top: 10px;
@@ -296,6 +296,14 @@ transform: scale(1.3);
 .blackletter{
     font-family: 'Staatliches', cursive;
     font-size: 20px;
+}
+
+.color-player1 {
+    color: #5B1D56;
+}
+
+.color-player2 {
+    color: #1B476A;
 }
 /*Settings */
 
@@ -463,6 +471,10 @@ transform: scale(1.3);
     }
 
     /*Game over Screen */
+
+    .player-color {
+        color: #176476;
+    }
 
     .gameover-screen-center {
         background-color: #B9EFFF;
