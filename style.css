@@ -375,10 +375,10 @@ transform: scale(1.3);
   .instructions-screen-center {
     background-color: #FFE5BD;
     width: 50%;
-    height: 90%;
+    height: 85%;
     text-align: center;
     position: absolute;
-    margin-top:2%;
+    margin-top:3%;
     margin-left: 24%;
     border-radius: 5px;
 }
@@ -399,9 +399,9 @@ transform: scale(1.3);
         font-size: 20px;
         font-weight: 500;
         padding: 0.5em 1.2em;
-        background: #FCD395;
+        background: #FFD070;
         border: 2px solid;
-        border-color: #FCD395;
+        border-color: #FFD070;
         position: relative;
       }
       .boton-naranja:before {
@@ -432,6 +432,32 @@ transform: scale(1.3);
         font-size: 18px;
     }
 
-    .color-p p{
+    .div-3-p p{
         color: #DFA246;
+    }
+
+    .flexbox-containert p {
+        padding-bottom: 10%;
+        padding-left: 2%;
+        padding-right: 2%;
+        color: #DB7093;
+        
+        
+    }
+
+    .flexbox-containert {
+        display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+        padding-top: 5%;
+        padding-left: 25%;
+    }
+    
+    .flexbox-containert > div {
+        width: 35%;
+        padding-top: 3%;
+    }
+
+    .espacio-botton {
+        padding-top: 6%;
     }
