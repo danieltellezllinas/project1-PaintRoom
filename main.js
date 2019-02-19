@@ -96,8 +96,17 @@ const main = () => {
 
     const buildGameScreen = () => {
 
-        player1name = players[0].value;
-        player2name = players[1].value;
+        if(!players[0].value) {
+            player1name = 'Player One'
+        } else {
+            player1name = players[0].value;
+        }
+
+        if(!players[1].value) {
+            player2name = 'Player Two'
+        } else {
+            player2name = players[1].value;
+        }
 
         const buildGameScreen = buildDom(`
         <section class="splash-screen">
@@ -184,15 +193,36 @@ const main = () => {
     const buildGameOver = (puntos1,puntos2) => {
         
         const buildGameOverScreen = buildDom(`
-        <section class="game-over">
-            <h1> Game over Screen</h1>
-            <button id="button1">Restart</button>
-            <button id="button2">Home</button>
-            <div id="nameplayer1-1"></div>
-            <div id="puntosplayer1"></div>
-            <div id='nameplayer2-2'></div>
-            <div id="puntosplayer2"></div>
 
+        <section class="splash-screen">
+            <div class="gameover-screen-center">
+            <div class="borde">
+                <h1 class="grow">¡End of the game!</h1>
+                <p class="titulo-gameover">¡Podrás volver al inicio o jugar de nuevo!</p>
+            <div class="flexbox-container">
+                <div>
+                    <h3 class="swing">Jugador 1</h3>
+                    <div class="background-x" id="nameplayer1-1"></div>
+                    <div class="padding-div-gameover" ></div>
+                    <div class="background-x" id="puntosplayer1"></div>
+                </div>
+                <div>
+                    <h3 class="swing">Jugador2</h3>
+                    <div class="background-x" id='nameplayer2-2'></div>
+                    <div class="padding-div-gameover" ></div>
+                    <div class="background-x" id="puntosplayer2"></div>
+                </div>
+            </div>
+            </div>
+            <div class="padding-bottom-gameover flexbox-container-gameover">
+                <div>
+                    <button class="boton-blue" id="button2">Home</button>
+                </div>
+                <div>
+                    <button class="boton-blue" id="button1">Restart</button>
+                </div>
+            </div>
+            </div>
         </section>
         `);
 

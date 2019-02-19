@@ -61,7 +61,7 @@ class Game {
 
     setTimeout(() => {
       this.isGameOver = true;
-    }, 62000);
+    }, 1000);
 
     const loop = () => {
       this.updateCanvas();
@@ -107,23 +107,19 @@ class Game {
     if (direction === "up") {
       if (this.player.y > 0) {
         this.player.y--;
-        // this.puntuacion();
-      }
+      };
     } else if (direction === "left") {
       if (this.player.x > 0) {
         this.player.x--;
-        // this.puntuacion();
-      }
+      };
     } else if (direction === "right") {
       if (this.player.x < this.map.grid[0].length - 1) {
         this.player.x++;
-        // this.puntuacion();
-      }
+      };
     } else if (direction === "down") {
       if (this.player.y < this.map.grid.length - 1) {
         this.player.y++;
-        // this.puntuacion();
-      }
+      };
     }
     this.map.grid[this.player.y][this.player.x] = 10;
     console.log(this.map.grid);
@@ -134,23 +130,19 @@ class Game {
     if (direction === "up") {
       if (this.player2.y > 0) {
         this.player2.y--;
-        //this.puntuacion();
-      }
+      };
     } else if (direction === "left") {
       if (this.player2.x > 0) {
         this.player2.x--;
-        //this.puntuacion();
-      }
+      };
     } else if (direction === "right") {
       if (this.player2.x < this.map.grid[0].length - 1) {
         this.player2.x++;
-        //this.puntuacion();
-      }
+      };
     } else if (direction === "down") {
       if (this.player2.y < this.map.grid.length - 1) {
         this.player2.y++;
-        //this.puntuacion();
-      }
+      };
     }
     this.map.grid[this.player2.y][this.player2.x] = 20;
     console.log(this.map.grid);
