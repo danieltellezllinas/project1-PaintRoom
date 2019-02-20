@@ -12,25 +12,29 @@ const main = () => {
         const buildSplashScreen = buildDom(`
         <section class="splash-screen screens">
             <div class="splash-screen-center">
-            <div class="borde">
-                <h1 class="grow">¡Paint Room!</h1>
-                <p class="titulo-splash">¡Bienvenid@! ¿Estás segur@ que podrás conseguir más puntos que tu oponente?</p>
-            <div class="flexbox-container">
-                <div>
-                    <h3 class="swing">¡Entra al juego!</h3>
-                    <p>¡Presiona el botón y que comience la diversión!</p>
-                    <button id="button1" class="boton">¡Start!</button>
+                <div class="borde">
+                    <h1 class="grow">¡Paint Room!</h1>
+                    <p class="titulo-splash">¡Bienvenid@! ¿Estás segur@ que podrás conseguir más puntos que tu oponente?</p>
+                    <div class="flexbox-container">
+                        <div>
+                            <h3 class="swing">¡Entra al juego!</h3>
+                            <p>¡Presiona el botón y que comience la diversión!</p>
+                            <button id="button1" class="boton">¡Start!</button>
+                        </div>
+                        <div>
+                            <h3 class="swing">Instrucciones</h3>
+                            <p>¿No sabes como jugar? ¡Aquí tendrás toda la información!</p>
+                            <button id="button2" class="boton">¡Here!</button>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="swing">Instrucciones</h3>
-                    <p>¿No sabes como jugar? ¡Aquí tendrás toda la información!</p>
-                    <button id="button2" class="boton">¡Here!</button>
-                </div>
-            </div>
-            </div>
             </div>
         </section>
         `);
+
+        var audio = new Audio();
+        audio.src = 'musica.mp3';
+        audio.play();
 
         const startButton1 = document.getElementById('button1');
         startButton1.addEventListener('click', buildSettingsScreen);
