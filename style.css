@@ -131,6 +131,7 @@ table {
     display: flex;
 }
 
+
 .borde {
     padding-top: 2%;
 }
@@ -145,6 +146,19 @@ table {
     margin-left: 24%;
     border-radius: 5px;
 }
+
+@media only screen and (max-width: 1440px) {
+        .splash-screen-center {
+        background-color: #FFD6D4;
+        width: 50%;
+        height: 40%;
+        text-align: center;
+        position: absolute;
+        margin-top:20%;
+        margin-left: 24%;
+        border-radius: 5px;
+    }
+  }
 
 .splash-screen-center h1 {
     font-family: 'Staatliches', cursive;
@@ -241,12 +255,23 @@ transform: scale(1.3);
       }
 
 /* Pantalla de juego */
+
 .game-screen {
     margin: 20px auto;
     width: 1000px;
     height: 500px;
     border: 1px #FBFFBD solid;
     background-image: url("Imagenes/background-game.png");
+}
+
+@media only screen and (max-width: 1440px) {
+    .game-screen{
+    margin: 50px auto;
+    width: 1000px;
+    height: 500px;
+    border: 1px #FBFFBD solid;
+    background-image: url("Imagenes/background-game.png");
+}
 }
 
 .flex-container {
@@ -323,6 +348,18 @@ transform: scale(1.3);
     padding-top: 1%;
 }
 
+@media only screen and (max-width: 1440px) {
+    .settings-screen-center {
+    width: 50%;
+    height: 40%;
+    text-align: center;
+    position: absolute;
+    margin-top:18%;
+    margin-left: 24%;
+    border-radius: 5px;
+}
+}
+
 .settings-screen-center h1 {
     font-family: 'Staatliches', cursive;
     font-size: 55px;
@@ -388,6 +425,18 @@ transform: scale(1.3);
     margin-top:3%;
     margin-left: 24%;
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 1440px) {
+    .instructions-screen-center {
+    width: 50%;
+    height: 63%;
+    text-align: center;
+    position: absolute;
+    margin-top:12%;
+    margin-left: 24%;
+    border-radius: 5px;
+}
 }
 
 .instructions-screen-center h1 {
@@ -482,6 +531,18 @@ transform: scale(1.3);
         text-align: center;
         margin: auto;
         border-radius: 5px;
+    }
+
+    @media only screen and (max-width: 1440px) {
+        .gameover-screen-center {
+            width: 50%;
+            height: 40%;
+            text-align: center;
+            position: absolute;
+            margin-top:20%;
+            margin-left: 24%;
+            border-radius: 5px;
+    }
     }
 
     .gameover-screen-center h1 {

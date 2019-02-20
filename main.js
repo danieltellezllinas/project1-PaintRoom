@@ -130,7 +130,7 @@ const main = () => {
                 </div>
                 </div>
             <section class="game-screen">
-            <canvas></canvas>
+            <canvas class="canvas"></canvas>
             </section>
         </section>
         `);
