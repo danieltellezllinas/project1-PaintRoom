@@ -1,5 +1,7 @@
 'use strict';
 
+var global = [0];
+console.log(global);
 const main = () => {
     let players;
 
@@ -226,10 +228,17 @@ const main = () => {
                 <div>
                     <button class="boton-blue" id="button1">Restart</button>
                 </div>
+                <div>
+                    <button class="boton-blue" id="buttonxx">Top 5</button>
+                </div>
             </div>
             </div>
         </section>
         `);
+        
+
+        const restartButtonxx = document.querySelector('#buttonxx');
+        restartButtonxx.addEventListener('click', buildRakingScreen);
 
         const restartButton1 = document.querySelector('#button1');
         restartButton1.addEventListener('click', buildGameScreen);
@@ -242,7 +251,61 @@ const main = () => {
 
         document.getElementById('nameplayer1-1').innerText = player1name;
         document.getElementById('nameplayer2-2').innerText = player2name;
+    
+        const localStorageScores = (event) => {
+            if(localStorage.getItem('score') !== null){
+                let localScores = JSON.parse(localStorage.getItem('score'));
+                localScores.push(event);
+                let sortArr = localScores.sort(function(a,b){return b-a;})
+                if(sortArr.lenght >= 5) {
+                    const slicedArray = sortArr.slice(0,5)
+                    localStorage.setItem('score', JSON.stringify(slicedArray));
+                } else {
+                    localStorage.setItem('score', JSON.stringify(sortArr));
+                };
+            } else {
+                const numberArray = [event]
+                localStorage.setItem('score', JSON.stringify(numberArray));
+            };
+            global = [0];
+        };
+        localStorageScores(global);
     }
+
+    const buildRakingScreen = () => {
+        const buildRakingScreen = buildDom(`
+        <section class="splash-screen screens">
+        <div class="ranking-screen-center">
+                <div>
+                <h1 class="grow">¡TOP 5!</h1>
+                <p class="titulo-settings">¡Aquí encontrarás las mayores puntuaciones conseguidas por usuarios!</p>
+                <div>
+                    <ol>
+                        <li class="font-size1-ranking" id="li1">Hola</li>
+                        <li class="font-size2-ranking" id="li2">Hola</li>
+                        <li class="font-size3-ranking" id="li3">Hola</li>
+                        <li class="font-size4-ranking" id="li4">Hola</li>
+                        <li class="font-size5-ranking" id="li5">Hola</li>
+                    </ol>
+                </div>
+                <div>
+                    <button class="boton-verde" id="button1">Volver</button>
+                </div>
+                </div>
+            </div>
+        </section>
+        `);
+
+        const ranking = JSON.parse( localStorage.getItem('score'));
+        document.getElementById('li1').innerText =ranking.slice(0,1);
+        document.getElementById('li2').innerText =ranking.slice(1,2);
+        document.getElementById('li3').innerText =ranking.slice(2,3);
+        document.getElementById('li4').innerText =ranking.slice(3,4);
+        document.getElementById('li5').innerText =ranking.slice(4,5);
+
+        const startButtomx = document.querySelector('#button1');
+        startButtomx.addEventListener('click', buildGameOver);
+    };
 
     buildSplashScreen();
 };

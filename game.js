@@ -14,6 +14,7 @@ class Game {
     this.counter2;
   }
 
+
   puntuacion() {
     this.counter1 = 0;
     this.counter2 = 0;
@@ -33,6 +34,18 @@ class Game {
     document.getElementById('puntosplayer2').innerText = this.puntostotal2;
    
   }
+
+  sumarHigScore(){
+    if(this.puntostotal1 > this.puntostotal2){
+      if(this.puntostotal1 > global[0]){
+        global = this.puntostotal1;
+      }
+    }else{
+      if(this.puntostotal2 > global[0]){
+        global = this.puntostotal2;
+      }
+    }
+  };
 
   contador() {
     var seconds = 60;
@@ -60,6 +73,7 @@ class Game {
     this.map = new Map(this.player, this.player2, this.canvas);
 
     setTimeout(() => {
+      this.sumarHigScore()
       this.isGameOver = true;
     }, 62000);
 

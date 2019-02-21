@@ -626,3 +626,53 @@ transform: scale(1.3);
     .gameover-puntos > div{
         width: 210px;
     }
+
+    /*Ranking*/
+
+    .font-size1-ranking {
+        font-size: 30px;
+        padding-bottom: 1%;
+    }
+
+    .font-size2-ranking {
+        font-size: 28px;
+        padding-bottom: 1%;
+    }
+
+    .font-size3-ranking {
+        font-size: 26px;
+        padding-bottom: 1%;
+    }
+
+    .font-size4-ranking {
+        font-size: 24px;
+        padding-bottom: 1%;
+    }
+
+    .font-size5-ranking {
+        font-size: 22px;
+        padding-bottom: 1%;
+        margin-bottom: 2%;
+    }
+
+    .ranking-screen-center {
+        background-color: #C2FFBF;
+        width: 50%;
+        height: 45%;
+        text-align: center;
+        position: absolute;
+        margin-top:17%;
+        margin-left: 24%;
+        border-radius: 5px;
+        padding-top: 1%;
+    }
+
+    .ranking-screen-center h1 {
+        font-family: 'Staatliches', cursive;
+        font-size: 55px;
+        color: white;
+        padding-top: 3%;
+        transition: transform .7s ease;
+        padding-bottom: 1%;
+    }
+
